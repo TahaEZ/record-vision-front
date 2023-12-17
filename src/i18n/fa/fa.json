@@ -1,0 +1,19 @@
+{
+    "cancel": "انصراف",
+    "datepickerFieldDayPlaceholder": "رر",
+    "datepickerFieldMonthPlaceholder": "م‌م",
+    "datepickerFieldYearPlaceholder": "س‌س‌س‌س",
+    "datepickerPlaceholder": "روز/ماه/سال",
+    "ok": "تایید",
+    "sat": "شنبه",
+    "sun": "یک",
+    "mon": "دو",
+    "tue": "سه",
+    "wed": "چهار",
+    "thu": "پنج",
+    "fri": "جمعه",
+    "events": "رویدادها",
+    "createEvent": "ایجاد رویداد",
+    "create": "ایجاد",
+    "enterAValidDate": "یک تاریخ معتبر وارد کنید"
+}
