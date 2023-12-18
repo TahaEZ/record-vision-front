@@ -1,26 +1,23 @@
 // module
-import { useState } from 'react'
 import { Breadcrumbs, Button, Typography } from '@mui/material'
-import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
 // custom
-import DatePicker from '../../components/date-picker'
+import DatePicker from '../../components/form/elements/date-picker'
 import { BreadcrumbsLink, Container, FormWrapper } from './styled-components'
 import ArrowLeft from '../../components/icons/arrow-left'
-import isValidDate from '../../utils/isDateInvalid'
+import Form from '../../components/form'
+import {
+    CreateEventForm,
+    createEventFormInitialData,
+    getCreateEventFormValidation,
+    submit,
+} from './functionality'
+import NumericInput from '../../components/form/elements/numeric-input'
 
 const CreateEvent = () => {
     const { t } = useTranslation()
-    const [eventDate, setEventDate] = useState<Date | null>(null)
 
-    const submit = async () => {
-        if (isValidDate(eventDate)) {
-            toast.error(t('enterAValidDate'))
-            return
-        }
-
-        console.log(eventDate)
-    }
+    const createEventFormValidation = getCreateEventFormValidation(t)
 
     return (
         <Container>
@@ -31,10 +28,39 @@ const CreateEvent = () => {
                         {t('createEvent')}
                     </Typography>
                 </Breadcrumbs>
-                <DatePicker value={eventDate} onChange={setEventDate} />
-                <Button size="large" onClick={submit}>
-                    {t('create')}
-                </Button>
+                <Form<CreateEventForm>
+                    useFormProps={{
+                        defaultValues: createEventFormInitialData,
+                    }}
+                    validation={createEventFormValidation}
+                    fieldsRenderer={data => (
+                        <>
+                            <DatePicker<CreateEventForm, any>
+                                data={data}
+                                label={t('startDate')}
+                                name="startDate"
+                            />
+                            <DatePicker<CreateEventForm, any>
+                                data={data}
+                                label={t('visionDate')}
+                                name="visionDate"
+                            />
+                            <NumericInput<CreateEventForm>
+                                data={data}
+                                label={t('grouping')}
+                                name="grouping"
+                            />
+                            <Button
+                                size="large"
+                                onClick={data.handleSubmit(formData =>
+                                    submit(formData, t),
+                                )}
+                            >
+                                {t('create')}
+                            </Button>
+                        </>
+                    )}
+                />
             </FormWrapper>
         </Container>
     )

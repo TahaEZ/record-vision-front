@@ -17,11 +17,17 @@
     "create": "ایجاد",
     "enterAValidDate": "یک تاریخ معتبر وارد کنید",
     "startDate": "تاریخ شروع",
+    "visionDate": "تاریخ چشم‌انداز",
     "vision": "چشم‌انداز",
     "grouping": "دسته‌بندی",
     "status": "وضعیت",
-    "unfinished": "ناتمام",
-    "arrived": "سررسیده",
+    "UNFINISHED": "ناتمام",
+    "ARRIVED": "سررسیده",
     "delete": "حذف",
-    "all": "همه"
+    "all": "همه",
+    "fillingTheFieldIsMandatory": "پر کردن فیلد اجباری است",
+    "valueMustBeANumber": "مقدار باید عدد باشد",
+    "groupingMustBeGreaterThanOrEqualToOne": "دسته‌بندی باید بزرگ‌تر یا مساوی یک باشد",
+    "eventCreatedSuccessfully": "رویداد با موفقیت ایجاد شد",
+    "eventCreationWasFailed": "ایجاد رویداد با خطا مواجه شد"
 }

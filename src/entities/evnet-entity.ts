@@ -9,7 +9,19 @@ type EventEntity = {
         year: number
         grouping: number
     }
-    deadlineStatus: 'arrived' | 'unfinished'
+    deadlineStatus: 'ARRIVED' | 'UNFINISHED'
 }
 
 export default EventEntity
+
+export type CreateEventEntity = {
+    day: number
+    month: number
+    year: number
+    vision: {
+        day: number
+        month: number
+        year: number
+        grouping: number
+    }
+}
