@@ -15,5 +15,13 @@
     "events": "رویدادها",
     "createEvent": "ایجاد رویداد",
     "create": "ایجاد",
-    "enterAValidDate": "یک تاریخ معتبر وارد کنید"
+    "enterAValidDate": "یک تاریخ معتبر وارد کنید",
+    "startDate": "تاریخ شروع",
+    "vision": "چشم‌انداز",
+    "grouping": "دسته‌بندی",
+    "status": "وضعیت",
+    "unfinished": "ناتمام",
+    "arrived": "سررسیده",
+    "delete": "حذف",
+    "all": "همه"
 }

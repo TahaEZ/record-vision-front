@@ -6,12 +6,13 @@ import {
     createTheme,
 } from '@mui/material'
 import { Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 // custom
 import './i18n/config'
 import appTheme from './theme/theme'
 import appStyle from './theme/app-style'
 import CreateEvent from './pages/create-event'
-import { ToastContainer } from 'react-toastify'
+import Events from './pages/events'
 
 const theme = createTheme(appTheme)
 
@@ -24,6 +25,7 @@ function App() {
                 <CssBaseline />
                 <Routes>
                     <Route path="/create-event" element={<CreateEvent />} />
+                    <Route path="/" element={<Events />} />
                 </Routes>
             </ThemeProvider>
         </>
