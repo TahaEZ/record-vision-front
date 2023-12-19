@@ -29,5 +29,13 @@
     "valueMustBeANumber": "مقدار باید عدد باشد",
     "groupingMustBeGreaterThanOrEqualToOne": "دسته‌بندی باید بزرگ‌تر یا مساوی یک باشد",
     "eventCreatedSuccessfully": "رویداد با موفقیت ایجاد شد",
-    "eventCreationWasFailed": "ایجاد رویداد با خطا مواجه شد"
+    "eventCreationWasFailed": "ایجاد رویداد با خطا مواجه شد",
+    "fetchingEventsFailed": "درخواست گرفتن رویدادها با خطا مواجه شد",
+    "more": "بیش‌تر",
+    "groupingNumber": "شماره دسته‌بندی",
+    "groupingDay": "روز دسته‌بندی",
+    "daysToEndGrouping": "روز تا پایان دسته‌بندی",
+    "daysToEndVision": "روز تا پایان چشم‌انداز",
+    "goneDays": "روز سپری‌شده",
+    "removingEventFailed": "حذف رویداد با خطا مواجه شد"
 }

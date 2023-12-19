@@ -58,7 +58,6 @@ export const submit = async (data: CreateEventForm, t: TFunction) => {
         await instance.post(apiUri, payload)
         toast.success(t('eventCreatedSuccessfully'))
     } catch (e) {
-        console.log(e)
         toast.error(t('eventCreationWasFailed'))
     }
 }

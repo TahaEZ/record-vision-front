@@ -1,7 +1,11 @@
 // module
 import { Box, Typography, styled, useTheme } from '@mui/material'
 
-export const Wrapper = styled(Box)(() => {
+type WrapperProps = { density?: 'standard' | 'comfortable'; isLarge?: boolean }
+
+export const Wrapper = styled(Box, {
+    shouldForwardProp: prop => prop !== 'isLarge' && prop !== 'density',
+})<WrapperProps>(({ density, isLarge }) => {
     const theme = useTheme()
 
     return {
@@ -9,8 +13,8 @@ export const Wrapper = styled(Box)(() => {
         borderRadius: '12px',
         display: 'flex',
         flexDirection: 'column',
-        gap: theme.spacing(3),
-        minWidth: '275px',
+        gap: density === 'comfortable' ? theme.spacing(3) : theme.spacing(1.5),
+        minWidth: isLarge ? '400px' : '275px',
         padding: `${theme.spacing(2)} ${theme.spacing(3)}`,
     }
 })
@@ -20,9 +24,11 @@ export const EventCardRow = styled(Box)({
     justifyContent: 'space-between',
 })
 
+type EventCardTextProps = { primaryColor?: boolean }
+
 export const EventCardText = styled(Typography, {
     shouldForwardProp: prop => prop !== 'primaryColor',
-})<{ primaryColor?: boolean }>(({ primaryColor }) => {
+})<EventCardTextProps>(({ primaryColor }) => {
     const theme = useTheme()
 
     return {
@@ -31,4 +37,25 @@ export const EventCardText = styled(Typography, {
             : (theme.palette.secondary as any)[200],
         fontSize: '16px',
     }
+})
+
+export const EventCardTextButton = styled(Typography)(() => {
+    const theme = useTheme()
+
+    return {
+        color: (theme.palette.primary as any)[500],
+        cursor: 'pointer',
+        ':hover': {
+            color: (theme.palette.primary as any)[300],
+        },
+    }
+})
+
+export const ModalContainer = styled(Box)({
+    alignItems: 'center',
+    display: 'flex',
+    height: '100vh',
+    justifyContent: 'center',
+    pointerEvents: 'none',
+    width: '100vw',
 })

@@ -10,6 +10,11 @@ type EventEntity = {
         grouping: number
     }
     deadlineStatus: 'ARRIVED' | 'UNFINISHED'
+    groupingNumber: number
+    groupingDay: number
+    daysToEndGrouping: number
+    daysToEndVision: number
+    goneDays: number
 }
 
 export default EventEntity
