@@ -1,13 +1,30 @@
 {
+  "author": "Taha Ebrahimzadeh",
   "name": "record-vision-front",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "main": "./out/main/main.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "dev": "electron-vite dev - w",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "package-win": "electron-builder --win"
+  },
+  "build": {
+    "extends": null,
+    "files": [
+      "**/*",
+      "build/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "extraResources": [
+      {
+        "from": "backend",
+        "to": "."
+      }
+    ]
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -33,11 +50,18 @@
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "electron-is-dev": "^2.0.0",
+    "electron-vite": "^1.0.29",
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "prettier": "^3.1.1",
+    "tree-kill": "^1.2.2",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vite-plugin-electron": "^0.15.5",
+    "vite-plugin-electron-renderer": "^0.14.5"
   }
 }
